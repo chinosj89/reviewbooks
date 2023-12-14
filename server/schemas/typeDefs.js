@@ -13,7 +13,7 @@ type Review {
     title: String
     author: String
     review: String
-    rating: String
+    rating: Int
 }
 type Query {
     users: [User]
@@ -42,6 +42,9 @@ input ReviewInput {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addUserInformation(userInput: UserInput): User
+    addUserReview(reviewInput: ReviewInput): User
+    removeUserReview(reviewId:ID!):User
 }    
 
 `
