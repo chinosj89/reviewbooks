@@ -25,10 +25,10 @@ const AppNavbar = () => {
               </Nav.Link>
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/myGetFitProfile'>
+                  <Nav.Link as={Link} to='/myProfile'>
                     Profile
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/searchWorkouts'>
+                  <Nav.Link as={Link} to='/searchBooks'>
                     Search For Workouts
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>

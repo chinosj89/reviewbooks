@@ -29,8 +29,6 @@ input UserInput {
     username: String
     email: String
     fullName: String
-    profilePicture: String
-    bookReviews: [ReviewInput]   
 }    
 input ReviewInput {
     date: String

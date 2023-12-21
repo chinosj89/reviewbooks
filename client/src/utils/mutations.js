@@ -49,3 +49,13 @@ export const REMOVE_REVIEW = gql`
         }
     }
 `
+
+export const ADD_USER_INFORMATION = gql`
+  mutation addUserInformation($userInput: UserInput!) {
+    addUserInformation(userInput: $userInput){
+      username
+      email
+      fullName
+    }
+  }
+`

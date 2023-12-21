@@ -1,16 +1,5 @@
-export const searchBooks = (book) => {
-    return fetch(`https://api.api-ninjas.com/v1/exercises?name=${book}`, {
-        method: 'GET',
-        headers: {
-            'X-Api-Key': 'CzFOeTT0EtP9tVynDq0F2A==8ThL2SiAyXH3sww9'
-        }
-    }
-    )
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        }).catch((err) => {
-            console.log(err)
-        });
+// make a search to google books api
+// https://www.googleapis.com/books/v1/volumes?q=harry+potter
+export const searchBooks = (query) => {
+    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
 };
-// need to replace with a book api

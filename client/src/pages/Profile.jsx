@@ -11,7 +11,7 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
+
 } from 'mdb-react-ui-kit';
 
 // import for notification
@@ -36,6 +36,8 @@ const ProfilePage = () => {
   const [userInput, setUserInput] = useState({
     username: "",
     email: "",
+    fullName: "",
+    bookReviews: "",
   });
   const [addUserInformation] = useMutation(ADD_USER_INFORMATION, {
     refetchQueries: [{ query: QUERY_ME }]
@@ -78,6 +80,7 @@ const ProfilePage = () => {
       setUserInput({
         username: data.user.username,
         email: data.user.email,
+        fullName: data.user.fullName,
 
       });
     }
@@ -100,7 +103,7 @@ const ProfilePage = () => {
   return (
     <section style={{ backgroundColor: '#eee' }}>
 
-      <MDBContainer className="py-5 vh-100">
+      <MDBContainer className="py-5 vh-50">
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4">
@@ -130,6 +133,7 @@ const ProfilePage = () => {
                         name="fullName"
                         value={userInput?.fullName}
                         onChange={handleInputChange}
+                        disabled={isDisabled}
                         className="form-control"
                         ref={firstFormField}
                         required
@@ -147,13 +151,14 @@ const ProfilePage = () => {
                         name="email"
                         value={userInput?.email}
                         onChange={handleInputChange}
+                        disabled={isDisabled}
                         ref={firstFormField}
                         required
                         className="form-control"
                       />
                     </MDBCol>
                   </MDBRow>
-                  {/* Add more information here*/}
+                  {/* Add more information here as you code*/}
 
                   <Button className='me-1 mx-auto' type="submit" disabled={isDisabled}>
                     Save Changes
@@ -167,6 +172,21 @@ const ProfilePage = () => {
         </MDBRow>
       </MDBContainer>
       <ToastContainer />
+
+      <MDBContainer className="py-5 vh-50">
+        <MDBRow>
+          <MDBCard>
+
+            <MDBCardBody>
+              <p>Hello World, These are My reviews:</p>
+            </MDBCardBody>
+
+
+          </MDBCard>
+
+
+        </MDBRow>
+      </MDBContainer>
     </section>
   );
 }
