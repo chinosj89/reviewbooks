@@ -8,26 +8,18 @@ import Auth from '../utils/auth';
 const AppNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 
-  // Replace 'logo.png' with the actual image file name or URL
-  const logoImage = 'https://i.pinimg.com/originals/cd/a2/08/cda2081dfd2b1af5c0444a032294965c.png';
+
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar bg='primary' variant='dark' expand='lg' data-bs-theme="dark">
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            <img
-              alt='Get Fit Logo'
-              src={logoImage}
-              width='40'
-              height='40'
-              className='d-inline-block align-top'
-            />{' '}
-            Get Fit
+            Book Lover's Reviews
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
+            <Nav className='ms-auto'>
               <Nav.Link as={Link} to='/'>
                 Home
               </Nav.Link>

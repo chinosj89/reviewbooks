@@ -30,7 +30,7 @@ input UserInput {
     email: String
     fullName: String
     profilePicture: String
-    bookReviews: [Review]    
+    bookReviews: [ReviewInput]   
 }    
 input ReviewInput {
     date: String
